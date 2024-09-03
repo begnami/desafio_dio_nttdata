@@ -10,7 +10,7 @@ Selecione uma das opções
 
 saldo = 0
 limite = 500
-extrato  = []
+extrato  = [] #Lista que facilita na exibição dos dados
 numero_saques = 0
 LIMITE_SAQUES = 3
 
@@ -20,12 +20,12 @@ while True:
 
     if opcao == "d":
         valor = input('Digite o valor do deposito: ')
-        valor_float = float(valor)
+        valor_float = float(valor) #Convertendo a variável
         if (valor_float <= 0 ):
              print('O valor a ser depositado não pode ser inferior ou igual a zero. Valor informado '+ '( '+ valor + ' )')
         else:
             saldo += valor_float
-            extrato.append('Deposito - R$ '+ valor)
+            extrato.append('Deposito - R$ '+ valor) #Adicionando objetos na lista
             print('\n Deposito efetuado com Sucesso!')
     elif opcao == "s":
         if (numero_saques < 3):
@@ -38,7 +38,7 @@ while True:
             else:
                 saldo -= valor_float
                 numero_saques += 1
-                extrato.append('Saque - R$ '+ valor)
+                extrato.append('Saque - R$ '+ valor) #Imprimindo o conteúdo da lista
                 print('Saque realizado com Sucesso, volte sempre!')                
         else:
             print('Limite de saque por dia atingido')    
